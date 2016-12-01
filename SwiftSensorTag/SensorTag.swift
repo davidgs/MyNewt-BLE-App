@@ -10,29 +10,19 @@ import Foundation
 import CoreBluetooth
 
 
-let deviceName = "SensorTag"
+let deviceName = "nimble"
 
 // Service UUIDs
-let IRTemperatureServiceUUID = CBUUID(string: "F000AA00-0451-4000-B000-000000000000")
-let AccelerometerServiceUUID = CBUUID(string: "F000AA10-0451-4000-B000-000000000000")
-let HumidityServiceUUID      = CBUUID(string: "F000AA20-0451-4000-B000-000000000000")
-let MagnetometerServiceUUID  = CBUUID(string: "F000AA30-0451-4000-B000-000000000000")
-let BarometerServiceUUID     = CBUUID(string: "F000AA40-0451-4000-B000-000000000000")
-let GyroscopeServiceUUID     = CBUUID(string: "F000AA50-0451-4000-B000-000000000000")
+let MyNewtSensorServiceUUID = CBUUID(string: "E761D2AF-1C15-4FA7-AF80-B5729020B340")
 
-// Characteristic UUIDs
-let IRTemperatureDataUUID   = CBUUID(string: "F000AA01-0451-4000-B000-000000000000")
-let IRTemperatureConfigUUID = CBUUID(string: "F000AA02-0451-4000-B000-000000000000")
-let AccelerometerDataUUID   = CBUUID(string: "F000AA11-0451-4000-B000-000000000000")
-let AccelerometerConfigUUID = CBUUID(string: "F000AA12-0451-4000-B000-000000000000")
-let HumidityDataUUID        = CBUUID(string: "F000AA21-0451-4000-B000-000000000000")
-let HumidityConfigUUID      = CBUUID(string: "F000AA22-0451-4000-B000-000000000000")
-let MagnetometerDataUUID    = CBUUID(string: "F000AA31-0451-4000-B000-000000000000")
-let MagnetometerConfigUUID  = CBUUID(string: "F000AA32-0451-4000-B000-000000000000")
-let BarometerDataUUID       = CBUUID(string: "F000AA41-0451-4000-B000-000000000000")
-let BarometerConfigUUID     = CBUUID(string: "F000AA42-0451-4000-B000-000000000000")
-let GyroscopeDataUUID       = CBUUID(string: "F000AA51-0451-4000-B000-000000000000")
-let GyroscopeConfigUUID     = CBUUID(string: "F000AA52-0451-4000-B000-000000000000")
+
+// config UUIDs start with 0x2A
+// Data UUIDs start with 0x4A
+
+let configPrefix = "DE"
+let dataPrefix = "AD"
+
+var deviceString = ""
 
 
 
@@ -41,15 +31,21 @@ class SensorTag {
     // Check name of device from advertisement data
     class func sensorTagFound (advertisementData: [NSObject : AnyObject]!) -> Bool {
         let nameOfDeviceFound = (advertisementData as NSDictionary).objectForKey(CBAdvertisementDataLocalNameKey) as? NSString
-        return (nameOfDeviceFound == deviceName)
+        if nameOfDeviceFound == nil {
+            return false
+        }
+        if(nameOfDeviceFound!.lowercaseString.rangeOfString(deviceName) != nil){
+            deviceString = nameOfDeviceFound as! String
+            return true
+        }
+        return false
     }
     
     
     // Check if the service has a valid UUID
     class func validService (service : CBService) -> Bool {
-        if service.UUID == IRTemperatureServiceUUID || service.UUID == AccelerometerServiceUUID ||
-            service.UUID == HumidityServiceUUID || service.UUID == MagnetometerServiceUUID ||
-            service.UUID == BarometerServiceUUID || service.UUID == GyroscopeServiceUUID {
+        print(service.UUID.UUIDString)
+        if service.UUID == MyNewtSensorServiceUUID  {
                 return true
         }
         else {
@@ -58,11 +54,10 @@ class SensorTag {
     }
     
     
-    // Check if the characteristic has a valid data UUID
+    // Check if the characteristic has a valid data UUID prefix
     class func validDataCharacteristic (characteristic : CBCharacteristic) -> Bool {
-        if characteristic.UUID == IRTemperatureDataUUID || characteristic.UUID == AccelerometerDataUUID ||
-            characteristic.UUID == HumidityDataUUID || characteristic.UUID == MagnetometerDataUUID ||
-            characteristic.UUID == BarometerDataUUID || characteristic.UUID == GyroscopeDataUUID {
+        print(characteristic.UUID.UUIDString)
+        if (characteristic.UUID.UUIDString.rangeOfString(dataPrefix) != nil) {
                 return true
         }
         else {
@@ -73,9 +68,7 @@ class SensorTag {
     
     // Check if the characteristic has a valid config UUID
     class func validConfigCharacteristic (characteristic : CBCharacteristic) -> Bool {
-        if characteristic.UUID == IRTemperatureConfigUUID || characteristic.UUID == AccelerometerConfigUUID ||
-            characteristic.UUID == HumidityConfigUUID || characteristic.UUID == MagnetometerConfigUUID ||
-            characteristic.UUID == BarometerConfigUUID || characteristic.UUID == GyroscopeConfigUUID {
+        if (characteristic.UUID.UUIDString.rangeOfString(configPrefix) != nil) {
                 return true
         }
         else {
@@ -83,23 +76,13 @@ class SensorTag {
         }
     }
     
+    class func getDeviceName () -> String {
+        return deviceString
+    }
     
     // Get labels of all sensors
     class func getSensorLabels () -> [String] {
-        let sensorLabels : [String] = [
-            "Ambient Temperature",
-            "Object Temperature",
-            "Accelerometer X",
-            "Accelerometer Y",
-            "Accelerometer Z",
-            "Relative Humidity",
-            "Magnetometer X",
-            "Magnetometer Y",
-            "Magnetometer Z",
-            "Gyroscope X",
-            "Gyroscope Y",
-            "Gyroscope Z"
-        ]
+        let sensorLabels : [String] = []
         return sensorLabels
     }
     
@@ -133,7 +116,7 @@ class SensorTag {
     // Get ambient temperature value
     class func getAmbientTemperature(value : NSData) -> Double {
         let dataFromSensor = dataToSignedBytes16(value)
-        let ambientTemperature = Double(dataFromSensor[1])/128
+        let ambientTemperature = Double(dataFromSensor[0])
         return ambientTemperature
     }
     
@@ -197,3 +180,36 @@ class SensorTag {
         return [xVal, yVal, zVal]
     }
 }
+extension NSData {
+    var u8:UInt8 {
+        assert(self.length >= 1)
+        var byte:UInt8 = 0x00
+        self.getBytes(&byte, length: 1)
+        return byte
+    }
+    
+    var u16:UInt16 {
+        assert(self.length >= 2)
+        var word:UInt16 = 0x0000
+        self.getBytes(&word, length: 2)
+        return word
+    }
+    
+    var u32:UInt32 {
+        assert(self.length >= 4)
+        var u32:UInt32 = 0x00000000
+        self.getBytes(&u32, length: 4)
+        return u32
+    }
+    
+    var u8s:[UInt8] { // Array of UInt8, Swift byte array basically
+        var buffer:[UInt8] = [UInt8](count: self.length, repeatedValue: 0)
+        self.getBytes(&buffer, length: self.length)
+        return buffer
+    }
+    
+    var utf8:String? {
+        return String(data: self, encoding: NSUTF8StringEncoding)
+    }
+}
+
