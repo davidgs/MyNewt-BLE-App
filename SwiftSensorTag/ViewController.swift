@@ -101,7 +101,9 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
     
     // Check out the discovered peripherals to find a MyNewt Device
     func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        
+        // print("AdvertisementData: \(advertisementData)")
+        //  print(advertisementData.indexForKey("kCBAdvDataServiceUUIDs"))
+        //  print("Services: \(peripheral.services) State: \(peripheral.state) Identifier: \(peripheral.identifier) Name: \(peripheral.name)")
         if SensorTag.sensorTagFound(advertisementData) == true {
             
             // Update Status Label

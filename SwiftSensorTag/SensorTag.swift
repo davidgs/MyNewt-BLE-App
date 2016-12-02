@@ -20,7 +20,7 @@ let MyNewtSensorServiceUUID = CBUUID(string: "E761D2AF-1C15-4FA7-AF80-B5729020B3
 // Data UUIDs start with 0x4A
 
 let configPrefix = "DE"
-let dataPrefix = "AD"
+let dataPrefix = "BE"
 
 var deviceString = ""
 
@@ -31,7 +31,8 @@ class SensorTag {
     // Check name of device from advertisement data
     class func sensorTagFound (advertisementData: [NSObject : AnyObject]!) -> Bool {
         let nameOfDeviceFound = (advertisementData as NSDictionary).objectForKey(CBAdvertisementDataLocalNameKey) as? NSString
-        if nameOfDeviceFound == nil {
+        
+            if nameOfDeviceFound == nil {
             return false
         }
         if(nameOfDeviceFound!.lowercaseString.rangeOfString(deviceName) != nil){

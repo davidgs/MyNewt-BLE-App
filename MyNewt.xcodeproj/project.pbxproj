@@ -30,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		97E4491E1A76A8EB00AECF47 /* SwiftSensorTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSensorTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E4491E1A76A8EB00AECF47 /* MyNewt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E449221A76A8EB00AECF47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E449231A76A8EB00AECF47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E449261A76A8EB00AECF47 /* SwiftSensorTag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftSensorTag.xcdatamodel; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		97E4492B1A76A8EB00AECF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97E4492D1A76A8EB00AECF47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		97E449301A76A8EB00AECF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		97E449361A76A8EB00AECF47 /* SwiftSensorTagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSensorTagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E449361A76A8EB00AECF47 /* MyNewtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNewtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E4493B1A76A8EB00AECF47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E4493C1A76A8EB00AECF47 /* SwiftSensorTagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSensorTagTests.swift; sourceTree = "<group>"; };
 		97E449461A76A91B00AECF47 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -78,8 +78,8 @@
 		97E4491F1A76A8EB00AECF47 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97E4491E1A76A8EB00AECF47 /* SwiftSensorTag.app */,
-				97E449361A76A8EB00AECF47 /* SwiftSensorTagTests.xctest */,
+				97E4491E1A76A8EB00AECF47 /* MyNewt.app */,
+				97E449361A76A8EB00AECF47 /* MyNewtTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		97E4491D1A76A8EB00AECF47 /* SwiftSensorTag */ = {
+		97E4491D1A76A8EB00AECF47 /* MyNewt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97E449401A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "SwiftSensorTag" */;
+			buildConfigurationList = 97E449401A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "MyNewt" */;
 			buildPhases = (
 				97E4491A1A76A8EB00AECF47 /* Sources */,
 				97E4491B1A76A8EB00AECF47 /* Frameworks */,
@@ -140,14 +140,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftSensorTag;
+			name = MyNewt;
 			productName = SwiftSensorTag;
-			productReference = 97E4491E1A76A8EB00AECF47 /* SwiftSensorTag.app */;
+			productReference = 97E4491E1A76A8EB00AECF47 /* MyNewt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		97E449351A76A8EB00AECF47 /* SwiftSensorTagTests */ = {
+		97E449351A76A8EB00AECF47 /* MyNewtTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97E449431A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "SwiftSensorTagTests" */;
+			buildConfigurationList = 97E449431A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "MyNewtTests" */;
 			buildPhases = (
 				97E449321A76A8EB00AECF47 /* Sources */,
 				97E449331A76A8EB00AECF47 /* Frameworks */,
@@ -158,9 +158,9 @@
 			dependencies = (
 				97E449381A76A8EB00AECF47 /* PBXTargetDependency */,
 			);
-			name = SwiftSensorTagTests;
+			name = MyNewtTests;
 			productName = SwiftSensorTagTests;
-			productReference = 97E449361A76A8EB00AECF47 /* SwiftSensorTagTests.xctest */;
+			productReference = 97E449361A76A8EB00AECF47 /* MyNewtTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "Anas Imtiaz";
+				ORGANIZATIONNAME = "David G. Simmons";
 				TargetAttributes = {
 					97E4491D1A76A8EB00AECF47 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 97E449191A76A8EB00AECF47 /* Build configuration list for PBXProject "SwiftSensorTag" */;
+			buildConfigurationList = 97E449191A76A8EB00AECF47 /* Build configuration list for PBXProject "MyNewt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,8 +199,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97E4491D1A76A8EB00AECF47 /* SwiftSensorTag */,
-				97E449351A76A8EB00AECF47 /* SwiftSensorTagTests */,
+				97E4491D1A76A8EB00AECF47 /* MyNewt */,
+				97E449351A76A8EB00AECF47 /* MyNewtTests */,
 			);
 		};
 /* End PBXProject section */
@@ -251,7 +251,7 @@
 /* Begin PBXTargetDependency section */
 		97E449381A76A8EB00AECF47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 97E4491D1A76A8EB00AECF47 /* SwiftSensorTag */;
+			target = 97E4491D1A76A8EB00AECF47 /* MyNewt */;
 			targetProxy = 97E449371A76A8EB00AECF47 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -406,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "im.anas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSensorTag.app/SwiftSensorTag";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNewt.app/MyNewt";
 			};
 			name = Debug;
 		};
@@ -423,14 +423,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "im.anas.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftSensorTag.app/SwiftSensorTag";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyNewt.app/MyNewt";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97E449191A76A8EB00AECF47 /* Build configuration list for PBXProject "SwiftSensorTag" */ = {
+		97E449191A76A8EB00AECF47 /* Build configuration list for PBXProject "MyNewt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97E4493E1A76A8EB00AECF47 /* Debug */,
@@ -439,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97E449401A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "SwiftSensorTag" */ = {
+		97E449401A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "MyNewt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97E449411A76A8EB00AECF47 /* Debug */,
@@ -448,7 +448,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97E449431A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "SwiftSensorTagTests" */ = {
+		97E449431A76A8EB00AECF47 /* Build configuration list for PBXNativeTarget "MyNewtTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97E449441A76A8EB00AECF47 /* Debug */,

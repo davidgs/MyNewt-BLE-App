@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "97E4491D1A76A8EB00AECF47"
-               BuildableName = "SwiftSensorTag.app"
-               BlueprintName = "SwiftSensorTag"
-               ReferencedContainer = "container:SwiftSensorTag.xcodeproj">
+               BuildableName = "MyNewt.app"
+               BlueprintName = "MyNewt"
+               ReferencedContainer = "container:MyNewt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "97E449351A76A8EB00AECF47"
-               BuildableName = "SwiftSensorTagTests.xctest"
-               BlueprintName = "SwiftSensorTagTests"
-               ReferencedContainer = "container:SwiftSensorTag.xcodeproj">
+               BuildableName = "MyNewtTests.xctest"
+               BlueprintName = "MyNewtTests"
+               ReferencedContainer = "container:MyNewt.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97E4491D1A76A8EB00AECF47"
-            BuildableName = "SwiftSensorTag.app"
-            BlueprintName = "SwiftSensorTag"
-            ReferencedContainer = "container:SwiftSensorTag.xcodeproj">
+            BuildableName = "MyNewt.app"
+            BlueprintName = "MyNewt"
+            ReferencedContainer = "container:MyNewt.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97E4491D1A76A8EB00AECF47"
-            BuildableName = "SwiftSensorTag.app"
-            BlueprintName = "SwiftSensorTag"
-            ReferencedContainer = "container:SwiftSensorTag.xcodeproj">
+            BuildableName = "MyNewt.app"
+            BlueprintName = "MyNewt"
+            ReferencedContainer = "container:MyNewt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "97E4491D1A76A8EB00AECF47"
-            BuildableName = "SwiftSensorTag.app"
-            BlueprintName = "SwiftSensorTag"
-            ReferencedContainer = "container:SwiftSensorTag.xcodeproj">
+            BuildableName = "MyNewt.app"
+            BlueprintName = "MyNewt"
+            ReferencedContainer = "container:MyNewt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
