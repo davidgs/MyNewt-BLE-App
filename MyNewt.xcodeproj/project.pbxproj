@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683AE3681E005A7100D2A793 /* MyNewtSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683AE3671E005A7100D2A793 /* MyNewtSensor.swift */; };
 		97E449241A76A8EB00AECF47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E449231A76A8EB00AECF47 /* AppDelegate.swift */; };
 		97E449271A76A8EB00AECF47 /* SwiftSensorTag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97E449251A76A8EB00AECF47 /* SwiftSensorTag.xcdatamodeld */; };
 		97E449291A76A8EB00AECF47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E449281A76A8EB00AECF47 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		683AE3671E005A7100D2A793 /* MyNewtSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNewtSensor.swift; sourceTree = "<group>"; };
 		97E4491E1A76A8EB00AECF47 /* MyNewt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E449221A76A8EB00AECF47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E449231A76A8EB00AECF47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				97E449231A76A8EB00AECF47 /* AppDelegate.swift */,
 				97E449281A76A8EB00AECF47 /* ViewController.swift */,
+				683AE3671E005A7100D2A793 /* MyNewtSensor.swift */,
 				97E449481A76AA8E00AECF47 /* SensorTag.swift */,
 				97E4494A1A77AD6800AECF47 /* SensorTagTableViewCell.swift */,
 				97E4492A1A76A8EB00AECF47 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				97E449271A76A8EB00AECF47 /* SwiftSensorTag.xcdatamodeld in Sources */,
 				97E449241A76A8EB00AECF47 /* AppDelegate.swift in Sources */,
 				97E4494B1A77AD6800AECF47 /* SensorTagTableViewCell.swift in Sources */,
+				683AE3681E005A7100D2A793 /* MyNewtSensor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +374,7 @@
 				DEVELOPMENT_TEAM = 54PAT44GP7;
 				INFOPLIST_FILE = SwiftSensorTag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "im.anas.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.apache.MyNewt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -383,7 +387,7 @@
 				DEVELOPMENT_TEAM = 54PAT44GP7;
 				INFOPLIST_FILE = SwiftSensorTag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "im.anas.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.apache.MyNewt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};

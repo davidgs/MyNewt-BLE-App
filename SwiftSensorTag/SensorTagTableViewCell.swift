@@ -28,18 +28,19 @@ class SensorTagTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         // sensor name
-        self.addSubview(sensorNameLabel)
-        sensorNameLabel.font = UIFont(name: "HelveticaNeue", size: 18)
-        sensorNameLabel.frame = CGRect(x: self.bounds.origin.x+self.layoutMargins.left*2, y: self.bounds.origin.y, width: self.frame.width, height: self.frame.height)
+        sensorNameLabel.font = UIFont(name: "HelveticaNeue", size: 14)
+        sensorNameLabel.frame = CGRect(x: self.bounds.origin.x+self.layoutMargins.left * 0.5, y: self.bounds.origin.y, width: self.frame.width, height: self.frame.height)
         sensorNameLabel.textAlignment = NSTextAlignment.Left
         sensorNameLabel.text = "Sensor Name Label"
-        
+        self.addSubview(sensorNameLabel)
+
         // sensor value
-        self.addSubview(sensorValueLabel)
-        sensorValueLabel.font = UIFont(name: "HelveticaNeue", size: 18)
-        sensorValueLabel.frame = CGRect(x: self.bounds.origin.x, y: self.bounds.origin.y, width: self.frame.width, height: self.frame.height)
-        sensorValueLabel.textAlignment = NSTextAlignment.Right
+        
+        sensorValueLabel.font = UIFont(name: "HelveticaNeue", size: 14)
+              sensorValueLabel.textAlignment = NSTextAlignment.Right
         sensorValueLabel.text = "Value"
+        sensorValueLabel.frame = CGRect(x: self.bounds.origin.x-50, y: self.bounds.origin.y, width: self.frame.width, height: self.frame.height)
+        self.addSubview(sensorValueLabel)
     }
     
     required init(coder aDecoder: NSCoder) {

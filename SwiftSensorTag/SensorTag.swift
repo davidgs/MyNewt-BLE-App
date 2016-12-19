@@ -117,6 +117,7 @@ class SensorTag {
     // Get ambient temperature value
     class func getAmbientTemperature(value : NSData) -> Double {
         let dataFromSensor = dataToSignedBytes16(value)
+        //    print("Value: \(value.u16)\n")
         let ambientTemperature = Double(dataFromSensor[0])
         return ambientTemperature
     }
